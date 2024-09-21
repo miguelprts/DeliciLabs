@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Comic+Neue&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Comic+Neue&family=Poppins&family=Norican&display=swap');
 
 :root{
-    --fundo: rgba(250, 235, 215, 0.6);
+    --fundo: rgba(250, 235, 215, 0.507);
     --tom_vermelho_1: #4d1614;
     --tom_vermelho_2: #b4393d;
     --fonte_principal: "Poppins", Helvetica;
-    --fonte_escrita: "Allura", Cursive;
+    --fonte_escrita: "Norican", Cursive;
     --fonte_textos: "Comic Neue", Helvetica;
 }
 body{
     background-image: url("/images/fundos/fundo_xadrez.svg");
-    background-position: center;
+    background-position:calc();
     background-repeat: repeat-y;
     background-size: cover;
     font-family: var(--fonte_principal);
@@ -20,49 +20,94 @@ body{
     backdrop-filter: blur(5px);
     border: white, 1px, solid;
     border-radius: 10px;
-    padding: 5px;
+    padding: 15px;
     margin-top: 15px;
+    margin-bottom: 20px;
+
 }
 
-nav{
+nav, .footer{
     background-image: url("/images/fundos/madeira_fundo.jpg");
 }
 .nav-link{
     color:rgb(244, 235, 223) !important;
     font-weight: 700;
 }
-.navbar-brand{
+.navbar-brand, .footer-brand{
     font-family: var(--fonte_escrita);
     font-weight: 700;
     font-size: 40px;
     color: var(--tom_vermelho_1);
 }
-.navbar-text{
+.navbar-text, .footer-text{
     font-family: var(--fonte_escrita);
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     color: var(--tom_vermelho_1);
 }
 .icone{
     color:var(--tom_vermelho_1);
     font-size: 20px;
 }
-.img_logo{
-    width: 250px;
-    align-content: center;
-}
 .textinho{
-    justify-content: justify;
     color:var(--tom_vermelho_1);
-    font-family: var(--fonte_textos);
-    font-weight: 600;
+    font-size: 20px;
+    font-family: var(--fonte_escrita);
+    font-weight:470;
 }
-.textinho h2{
-    text-align: center;
-    font-weight: 900;
+.imgs_carrossel{
+    border-radius: 15px;
+    width: 300px;
 }
-.textinho abbr{
-    font-style: italic;
-    font-weight: 900;
+.b1{
+    justify-content: center;
+    margin: auto;
+    padding: 10px;
+}
+.b1 button{
+    border-color: var(--tom_vermelho_2);
+    background-color: #b4393d;
+}
+.logo{
+    width: 150px;
+}
+.outra_letra, abbr{
+    font-family: var(--fonte_principal);
     text-decoration: none;
+}
+.textinho-2{
+    margin-top: 10px;
+    padding: 20px;
+    color:var(--tom_vermelho_1);
+    text-align: center;
+    font-size: 15px;
+    font-family: var(--fonte_principal);
+    font-weight:470;
+}
+.redes{
+    font-size: 30px;
+}
+
+.conteudos-index{
+    margin: 15px;
+    background-color: var(--tom_vermelho_2);
+    border-radius: 10px;
+    padding: 10px;
+}
+.conteudos-index h2{
+    color:antiquewhite;
+    font-size: 20px;
+}
+.card{
+    margin: 10px;
+    width: 150px;
+}
+.card-title{
+    color: var(--tom_vermelho_2);
+    font-weight: 600;
+    font-size: calc();
+}
+
+.card-img-top:hover{
+    box-shadow: var(--fundo) 0px 30px 90px 8px;
 }
