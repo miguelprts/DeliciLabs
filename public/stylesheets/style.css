@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Comic+Neue&family=Poppins&family=Norican&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins&family=Norican&display=swap');
 
 :root{
     --fundo: rgba(250, 235, 215, 0.507);
@@ -6,7 +6,6 @@
     --tom_vermelho_2: #b4393d;
     --fonte_principal: "Poppins", Helvetica;
     --fonte_escrita: "Norican", Cursive;
-    --fonte_textos: "Comic Neue", Helvetica;
 }
 body{
     background-image: url("/images/fundos/fundo_xadrez.svg");
@@ -23,9 +22,11 @@ body{
     padding: 15px;
     margin-top: 15px;
     margin-bottom: 20px;
-
 }
 
+.footer{
+    position:absolute;
+}
 nav, .footer{
     background-image: url("/images/fundos/madeira_fundo.jpg");
 }
@@ -87,14 +88,13 @@ nav, .footer{
 .redes{
     font-size: 30px;
 }
-
-.conteudos-index{
+.conteudos{
     margin: 15px;
     background-color: var(--tom_vermelho_2);
     border-radius: 10px;
     padding: 10px;
 }
-.conteudos-index h2{
+.conteudos h2{
     color:antiquewhite;
     font-size: 20px;
 }
@@ -107,7 +107,9 @@ nav, .footer{
     font-weight: 600;
     font-size: calc();
 }
-
 .card-img-top:hover{
     box-shadow: var(--fundo) 0px 30px 90px 8px;
+}
+.explorar-pesquisa button{
+    background-color: var(--tom_vermelho_2);
 }

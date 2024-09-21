@@ -8,6 +8,8 @@ const bodyParser = require('body-parser');
 var indexRouter = require('./routes/rotasIndex.js');
 var rotasReceitas = require('./routes/rotasReceitas.js');
 var rotasApi = require('./routes/rotasApi.js');
+var rotasUser = require('./routes/rotasUsuario.js');
+
 
 var app = express();
 
@@ -26,6 +28,8 @@ app.use(bodyParser.json());
 app.use('/', indexRouter);
 app.use('/receitas', rotasReceitas);
 app.use('/receitas/api', rotasApi);
+app.use('/usuario', rotasUser);
+
 
 
 // catch 404 and forward to error handler

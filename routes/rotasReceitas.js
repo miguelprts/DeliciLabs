@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const controller = require('../controller/controllerReceitas')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'DeliciLabs' });
-});
+router.get('/explorar', controller.tela_explorar);
+
+
 
 module.exports = router;
