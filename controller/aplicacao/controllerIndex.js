@@ -21,8 +21,12 @@ exports.tela_explorar = async function(req, res) {
 }
 
 exports.tela_suasReceitas = async function(req,res) {
+
+    var minhasReceitas = await modelMinhasReceitas.pegarReceitas();
+
     coisas = {
         title: "Suas Receitas",
+        minhasReceitas: minhasReceitas
     }
     res.render('index/suasReceitas', coisas)
 }

@@ -1,16 +1,24 @@
-<form class="row form-receitas">
+<form method="post" action="/receitas/novaReceita" class="row g-2 form-receitas" >
     <label for="titulo">Nome de sua receita: </label>
-    <input type="text" name="receita" id="titulo">
+    <input required type="text" name="receita" id="titulo">
 
-    <label for="categoria">Categoria</label>
-    <input type="text" name="categoria" id="categoria">
+<div class="col-md-6 col-12">
+    <label class="form-label" for="categoria">Categoria</label>
+    <input required class="form-control" type="text" name="categoria" id="categoria">
+</div>
+
+<div class="col-md-6 col-12">
+    <label class="form-label" for="categoria">URL da Imagem</label>
+    <input class="form-control" type="text" name="url_imagem" id="url">
+</div>
 
     <label for="ing">Ingredientes</label>
     <textarea name="ingredientes" id="ing" rows="6" cols="10"></textarea>
     
     <label for="mp">Modo de preparo</label>
     <textarea name="modo_de_preparo" id="mp" rows="6" cols="10"></textarea>
-
-    <button class="btn">Cancelar</button>
-    <button class="btn">Adicionar</button>
+    <p>
+        <a class="btn bt-cancelar" href="/suasReceitas">Cancelar</a>
+        <button type="submit" class="btn bt-adc-ins">Adicionar</button>
+    </p>
 </form>

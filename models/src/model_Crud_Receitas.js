@@ -1,4 +1,5 @@
 const {conectarAoBanco, baseDeDados} = require('../config/configMongo');
+const mongodb = require('mongodb')
 
 class ModelReceitas {
     async adicionarReceita(receita) {
@@ -18,7 +19,7 @@ class ModelReceitas {
         var id = receita._id
         await collection.updateOne(
             { _id: new mongodb.ObjectId(id)},
-            { $set: { } }
+            { $set: {receita: receita.receita, categoria:receita.categoria, ingredientes:receita.ingredientes, modo_de_preparo:receita.modo_de_preparo} }
         )
     }
     async deletarReceita(id){

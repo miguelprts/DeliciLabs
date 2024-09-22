@@ -15,7 +15,7 @@
 
   {{#each receitasApi}}
      <div class="col-md-3 col-12 d-flex justify-content-center">
-      <a href="">
+      <a href="/receitas/visualizarReceitasApi/{{this.id}}">
       <div class="card card-receitas">
         <img src='{{this.link_imagem}}' class="card-img-top img" alt="Img">
         <div class="card-body">
@@ -28,9 +28,9 @@
 
   {{#each minhasReceitas}}
      <div class="col-md-3 col-12 d-flex justify-content-center">
-      <a href="">
+      <a href="/receitas/visualizarReceita/{{this._id}}">
       <div class="card card-receitas">
-        <img src='{{this.link_imagem}}' class="card-img-top img" alt="Img">
+        <img src='{{this.url_imagem}}' class="card-img-top img" alt="Img">
         <div class="card-body">
           <h5 class="card-title">{{this.receita}}</h5>
         </div>

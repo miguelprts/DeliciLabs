@@ -1,26 +1,37 @@
 <div class="row conteudos b-usuario">
-    <div class="col-12 col-md-5 d-flex justify-content-center">
-        <img width="150px" src="/images/logos/usuario.png" alt="Usuário">
-    </div>
-    <div class="col-12 col-md-7 b-user-texto">
-        <h2>Olá, visitante!</h2>
-        <p>Veja, edite e insira suas novas receitas nesta página!</p>
-        <a action="GET" class="btn" href="/receitas/novaReceita">Nova Receita</a>
-    </div>
+  <div class="col-12 col-md-5 d-flex justify-content-center">
+    <img width="150px" src="/images/logos/usuario.png" alt="Usuário">
+  </div>
+  <div class="col-12 col-md-7 b-user-texto">
+    <h2>Olá, visitante!</h2>
+    <p>Veja, edite e insira suas novas receitas nesta página!</p>
+    <a action="GET" class="btn" href="/receitas/novaReceita">Nova Receita</a>
+  </div>
 </div>
 
 <div class="row conteudos ">
-    <div class="col-12"><h2>Suas receitas: </h2></div>
-    
- <div class="col-md-3 col-12 d-flex justify-content-center">
-      <a href="">
-      <div class="card">
-        <img src="{{url_imagem}}" class="card-img-top" alt="Img">
-        <div class="card-body">
-          <h5 class="card-title">{{titulo_receita}}</h5>
+  <div class="col-12">
+    <h2>Suas receitas: </h2>
+  </div>
+
+  <div class="accordion" id="accordionReceitas">
+    {{#each minhasReceitas}}
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+          aria-expanded="true" aria-controls="collapseOne">
+          {{this.receita}}
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionReceitas">
+        <div class="accordion-body">
+            <p>Categoria: {{this.categoria}}.</p>
+            <p><a href="/receitas/atualizarReceita/{{this._id}}">Atualizar</a>
+               <a href="/receitas/visualizarReceita/{{this._id}}">Visualizar</a>
+               <a href="receitas/deletarReceita/{{this._id}}">Excluir</a></p>
         </div>
       </div>
-      </a>
     </div>
-
+        {{/each}}
+  </div>
 </div>

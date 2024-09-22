@@ -5,11 +5,12 @@ const controller = require('../controller/aplicacao/controllerReceitas')
 router.get('/novaReceita', controller.novaReceita)
 router.post('/novaReceita', controller.novaReceita_post)
 
-router.get('/visualizar/:_id', controller.visualizarReceita);
+router.get('/visualizarReceita/:_id', controller.visualizarReceita);
+router.get('/visualizarReceitasApi/:id', controller.visualizarReceitaApi);
 
-router.get('/atualizar/:_id', controller.atualizarReceita);
-router.post('/atualizar/:_id', controller.atualizarReceita_post);
+router.get('/atualizarReceita/:_id', controller.atualizarReceita);
+router.post('/atualizarReceita/:_id', controller.atualizarReceita_post);
 
-router.get('/deletar/:_id', controller.deletarReceita);
+router.get('/deletarReceita/:_id', controller.deletarReceita);
  
 module.exports = router;

@@ -1,16 +1,26 @@
-<form class="row form-receitas">
-    <label for="titulo">Nome de sua receita: </label>
-    <input type="text" name="receita" id="titulo">
+<form class="row g-2 form-receitas" method="POST" action="/receitas/atualizarReceita/{{receita._id}}">
+    <label for="titulo">Receita: </label>
+    <input type="text" name="receita" id="titulo" value="{{receita.receita}}">
 
-    <label for="categoria">Categoria</label>
-    <input type="text" name="categoria" id="categoria">
+<div class="col-md-6 col-12">
+    <label class="form-label" for="categoria">Categoria</label>
+    <input class="form-control" type="text" name="categoria" id="categoria" value="{{receita.categoria}}">
+</div>
+
+<div class="col-md-6 col-12">
+    <label class="form-label" for="categoria">URL da Imagem</label>
+    <input class="form-control" type="text" name="url_imagem" id="url" value="{{url_imagem}}"> 
+</div>
 
     <label for="ing">Ingredientes</label>
-    <textarea name="ingredientes" id="ing" rows="6" cols="10"></textarea>
-    
-    <label for="mp">Modo de preparo</label>
-    <textarea name="modo_de_preparo" id="mp" rows="6" cols="10"></textarea>
+    <textarea name="ingredientes" id="ing" rows="6" cols="10" >{{receita.ingredientes}}</textarea>
 
-    <button class="btn">Cancelar</button>
-    <button class="btn">Adicionar</button>
+    <label for="mp">Modo de preparo</label>
+    <textarea name="modo_de_preparo" id="mp" rows="6" cols="10">{{receita.modo_de_preparo}}</textarea>
+
+    <input readonly hidden type="text" name="_id" id="_id" value="{{receita._id}}">
+    <p>
+        <a class="btn bt-cancelar" href="/suasReceitas">Cancelar</a>
+        <button type="submit" class="btn bt-adc-ins">Atualizar</button>
+    </p>
 </form>

@@ -1,16 +1,24 @@
-<form class="row form-receitas"></form>
-    <label for="titulo">Nome de sua receita: </label>
-    <input type="text" name="receita" id="titulo">
-
+<form class="row g-2 form-receitas" >
+    <label for="titulo">Receita: </label>
+    <input readonly type="text" name="receita" id="titulo" value="{{receita.receita}}">
+{{#if api}}
     <label for="categoria">Categoria</label>
-    <input type="text" name="categoria" id="categoria">
-
+    <input readonly type="text" name="categoria" id="categoria" value="{{receita.tipo}}">
+{{else}}
+    <label for="categoria">Categoria</label>
+    <input readonly type="text" name="categoria" id="categoria" value="{{receita.categoria}}">
+{{/if}}
     <label for="ing">Ingredientes</label>
-    <textarea name="ingredientes" id="ing" rows="6" cols="10"></textarea>
-    
-    <label for="mp">Modo de preparo</label>
-    <textarea name="modo_de_preparo" id="mp" rows="6" cols="10"></textarea>
+    <textarea readonly name="ingredientes" id="ing" rows="6" cols="10">{{receita.ingredientes}}</textarea>
 
-    <button class="btn">Cancelar</button>
-    <button class="btn">Adicionar</button>
+{{#if api}}
+    <label for="mp">Modo de preparo</label>
+    <textarea readonly name="modo_de_preparo" id="mp" rows="6" cols="10">{{receita.modo_preparo}}</textarea>
+{{else}}
+    <label for="mp">Modo de preparo</label>
+    <textarea readonly name="modo_de_preparo" id="mp" rows="6" cols="10">{{receita.modo_de_preparo}}</textarea>
+{{/if}}
+    <p>
+        <a class="btn bt-cancelar" href="javascript:window.history.back();">Voltar</a>
+    </p>
 </form>
