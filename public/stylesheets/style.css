@@ -128,14 +128,19 @@ nav, footer{
 .form-receitas label{
     font-family: var(--fonte_secundaria);
     font-size: 20px;
-    text-shadow:  1px 1px 3px var(--cor_texto);
+    text-shadow: 1px 1px 3px var(--cor_texto);
+    text-shadow:  1px 1px 1px black;
 }
 .form-receitas input, .form-receitas textarea{
     border-style: none;
     border-radius: 15px;
 
-    background-color: beige;
+    background-image: var(--fundo_madeira);
     resize: none;
+
+    &:focus{
+        background-color: var(--cor_texto);
+    }
 }
 .bt-cancelar{
     background-color: var(--verde_principal);
@@ -153,4 +158,30 @@ nav, footer{
 .form-receitas p{
     margin-top: 10px;
     text-align: center;
+}
+
+.accordion-button{
+    background-color: var(--vermelho_principal);
+    color: var(--cor_texto);
+
+    &:focus {
+        box-shadow: none; /* Remove o efeito de foco (azul) */
+      }
+    &:not(.collapsed) {
+        background-color: var(--vermelho_principal);  
+        color: var(--cor_texto);
+        box-shadow: none; 
+    }
+}
+.accordion-body{
+    background-image: var(--fundo_madeira);
+    text-align: center;
+}
+.bt-acc{
+    background-color: var(--verde_principal);
+    color: var(--cor_texto);
+
+    &:hover{
+        background-color: var(--vermelho_principal);
+    }
 }

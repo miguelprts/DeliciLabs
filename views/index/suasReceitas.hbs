@@ -15,23 +15,29 @@
   </div>
 
   <div class="accordion" id="accordionReceitas">
-    {{#each minhasReceitas}}
+  {{#each minhasReceitas}}
     <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-          aria-expanded="true" aria-controls="collapseOne">
+      <h2 class="accordion-header" id="heading{{this._id}}">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{this._id}}"
+          aria-expanded="false" aria-controls="collapse{{this._id}}">
           {{this.receita}}
         </button>
       </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionReceitas">
+      <div id="collapse{{this._id}}" class="accordion-collapse collapse" data-bs-parent="#accordionReceitas">
         <div class="accordion-body">
-            <p>Categoria: {{this.categoria}}.</p>
-            <p><a href="/receitas/atualizarReceita/{{this._id}}">Atualizar</a>
-               <a href="/receitas/visualizarReceita/{{this._id}}">Visualizar</a>
-               <a href="receitas/deletarReceita/{{this._id}}">Excluir</a></p>
+          <p>Categoria: {{this.categoria}}.</p>
+          <p>
+            <a class="btn bt-acc" href="/receitas/atualizarReceita/{{this._id}}">Atualizar</a>
+            <a class="btn bt-acc" href="/receitas/visualizarReceita/{{this._id}}">Visualizar</a>
+            <button class="btn bt-acc" data-id="{{this._id}}" onclick="showDeleteAlert('{{this._id}}')">Excluir</button>
+          </p>
+          <div id="alertPlaceholder{{this._id}}"></div>
         </div>
       </div>
     </div>
-        {{/each}}
-  </div>
+  {{/each}}
+</div>
+
+
+  
 </div>
