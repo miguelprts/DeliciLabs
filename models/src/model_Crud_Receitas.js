@@ -1,4 +1,4 @@
-const {conectarAoBanco, baseDeDados } = require('../config/configMongo');
+const {conectarAoBanco, baseDeDados} = require('../config/configMongo');
 
 class ModelReceitas {
     async adicionarReceita(receita) {
@@ -34,7 +34,7 @@ class ModelReceitas {
     async pegarReceitas(){
         await conectarAoBanco();
         const collection = baseDeDados().collection("Minhas_Receitas");
-        var receitas = await collection.find({})
+        var receitas = await collection.find({}).toArray()
         return receitas
     }
 }

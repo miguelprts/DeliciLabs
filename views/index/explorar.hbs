@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-12 explorar-pesquisa">
-    <form>
+  <div class="col-12!">
+    <form class='pesquisar-explorar'>
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Pesquise por uma receita"
           aria-label="Pesquise por uma receita" aria-describedby="button-addon2">
@@ -16,8 +16,21 @@
   {{#each receitasApi}}
      <div class="col-md-3 col-12 d-flex justify-content-center">
       <a href="">
-      <div class="card">
-        <img src='{{this.link_imagem}}' class="card-img-top" alt="Img">
+      <div class="card card-receitas">
+        <img src='{{this.link_imagem}}' class="card-img-top img" alt="Img">
+        <div class="card-body">
+          <h5 class="card-title">{{this.receita}}</h5>
+        </div>
+      </div>
+      </a>
+    </div>
+  {{/each}}
+
+  {{#each minhasReceitas}}
+     <div class="col-md-3 col-12 d-flex justify-content-center">
+      <a href="">
+      <div class="card card-receitas">
+        <img src='{{this.link_imagem}}' class="card-img-top img" alt="Img">
         <div class="card-body">
           <h5 class="card-title">{{this.receita}}</h5>
         </div>

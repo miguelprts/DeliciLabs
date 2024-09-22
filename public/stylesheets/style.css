@@ -1,130 +1,140 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins&family=Norican&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:opsz,wght@9..40,500&family=Tangerine:wght@700&display=swap');
 :root{
-    --fundo_xadrez: url("/images/fundos/fundo_xadrez.svg");
-    --fundo_madeira: url("/images/fundos/madeira_fundo.jpg");
-    --fundo: rgba(250, 235, 215, 0.507);
-    --tom_vermelho_1: #4d1614;
-    --tom_vermelho_2: #b4393d;
-    --fonte_principal: "Poppins", Helvetica;
-    --fonte_escrita: "Norican", Cursive;
+    --cor_marrom: #9c4a45;
+    --vermelho_principal: #b4393d;
+    --verde_principal: #6da58c;
+    --cor_texto: bisque;
+
+    --fundo_madeira: url('/images/fundos/fundo_madeira.png');
+    --fundo_xadrez: url('/images/fundos/fundo_xadrez.svg');
+
+    --fonte_principal: "Dm Sans", Helvetica, sans-serif;
+    --fonte_secundaria: "Berkshire Swash", Arial;
 }
 a{
-    color: var(--tom_vermelho_1);
     text-decoration: none;
 }
 body{
-    background-image: var(--fundo_xadrez);
-    background-position:calc();
+    background-image: var(--fundo_madeira);
+    background-position: calc();
     background-repeat: repeat-y;
     background-size: cover;
     font-family: var(--fonte_principal);
 }
-.container{
-    background-color: var(--fundo);
-    backdrop-filter: blur(5px);
-    border: white, 1px, solid;
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 15px;
-    margin-bottom: 20px;
+nav, footer{
+    background-color: var(--vermelho_principal);
 }
+.nav-link, .navbar-text{
+    color:var(--cor_texto);
+    font-size: 18px;
 
-.footer{
-    position:absolute;
-}
-nav, .footer{
-    background-image: var(--fundo_madeira)
-}
-.nav-link{
-    color:rgb(244, 235, 223) !important;
-    font-weight: 700;
+    &:hover{
+        font-size: 20px;
+        color:beige;
+    }
 }
 .navbar-brand, .footer-brand{
-    font-family: var(--fonte_escrita);
+    color:var(--cor_texto);
+    font-family: var(--fonte_secundaria);
+    font-size: 25px;
     font-weight: 700;
-    font-size: 40px;
-    color: var(--tom_vermelho_1);
+
+    &:hover{
+        color:var(--verde_principal);
+    }
 }
-.navbar-text, .footer-text{
-    font-family: var(--fonte_escrita);
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--tom_vermelho_1);
-}
-.icone{
-    color:var(--tom_vermelho_1);
-    font-size: 20px;
-}
-.textinho{
-    color:var(--tom_vermelho_1);
-    font-size: 20px;
-    font-family: var(--fonte_escrita);
-    font-weight:470;
-}
-.imgs_carrossel{
-    border-radius: 15px;
-    width: 300px;
-}
-.b1{
-    justify-content: center;
-    margin: auto;
-    padding: 10px;
-}
-.b1 button{
-    border-color: var(--tom_vermelho_2);
-    background-color: #b4393d;
-}
-.logo{
-    width: 150px;
-}
-.outra_letra, abbr{
-    font-family: var(--fonte_principal);
-    text-decoration: none;
-}
-.textinho-2{
-    margin-top: 10px;
-    padding: 20px;
-    color:var(--tom_vermelho_1);
-    text-align: center;
-    font-size: 15px;
-    font-family: var(--fonte_principal);
-    font-weight:470;
-}
-.redes{
-    font-size: 30px;
+.footer-text{
+    color:var(--cor_texto)
 }
 .conteudos{
-    margin: 15px;
-    background-color: var(--tom_vermelho_2);
-    border-radius: 10px;
-    padding: 10px;
+    padding:30px;
+    margin: 15px 0px ;
+    background-image: var(--fundo_xadrez);
+
+    color: black;
+    text-shadow: 1px 1px 3px var(--cor_texto);
+    box-shadow: rgba(0, 0, 0, 0.444) 0px 3px 8px;
+
+    border-radius: 15px;
 }
-.conteudos h2{
-    color:antiquewhite;
-    font-size: 20px;
+.b1-index{
+    text-align: center;
+    background-image: none;
+}
+.b1-index h4{
+    font-family: "Tangerine";
+    font-size: 35px;
+    font-weight: 1200;
+}
+.b1-index h5{
+    margin-top: 15px;
+    color:var(--vermelho_principal)
+}
+.b1-index form button, .pesquisar-explorar button{
+    background-color: var(--vermelho_principal);
+    border-color: var(--vermelho_principal);
+
+    &:hover{
+        background-color: var(--verde_principal);
+    }
 }
 .card{
-    margin:10px;
-    height: 300px
+    background-color: var(--vermelho_principal);
+    color:var(--cor_texto);
+    border-style: none;
+    margin: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    &:hover{
+        box-shadow: rgba(255, 228, 196, 0.90) 0px 22px 70px 4px;
+    }
 }
-.card-index{
+.card img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.card-receitas {
     height: 200px;
-    width: 150px;
+    width: 230px; /* Para garantir que o card tenha altura total */
+  }
+  
+  .card-receitas img {
+    width: 100%;        /* Garante que a imagem ocupe toda a largura do card */
+    height: 200px;      /* Defina uma altura fixa */
+    object-fit: cover;  /* Faz com que a imagem cubra a área definida, cortando se necessário */
+    overflow: hidden;   /* Esconde qualquer parte que ultrapasse o card */
+  }
+
+.pesquisar-explorar{
+    margin-top: 30px
 }
-.card-title{
-    color: var(--tom_vermelho_2);
-    font-weight: 600;
-    font-size: calc();
+.b-usuario{
+    background-image: none;
 }
-.card-img-top:hover{
-    box-shadow: var(--fundo) 0px 30px 90px 8px;
-}
-.explorar-pesquisa button{
-    background-color: var(--tom_vermelho_2);
-}
-.usuario-secao *{
+.b-user-texto{
     margin: auto;
-    color: antiquewhite;
-    text-align: center;
+}
+.b-user-texto .btn{
+    background-color: var(--vermelho_principal);
+    color:var(--cor_texto);
+    border-width: 2px;
+}
+
+.form-receitas{
+    padding: 15px;
+    margin: 15px 0px;
+    background-image: var(--fundo_xadrez);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.form-receitas label{
+    font-family: var(--fonte_secundaria);
+    font-size: 20px;
+    text-shadow:  1px 1px 3px var(--cor_texto);
+}
+.form-receitas input, .form-receitas textarea{
+    border-style: none;
+    border-radius: 15px;
+
+    background-color: beige;
+    resize: none;
 }
