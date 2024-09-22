@@ -13,13 +13,17 @@
 <div class="row conteudos">
   <div class="col-12"><h2>Explorar Receitas:</h2></div>
 
+  {{#each receitasApi}}
      <div class="col-md-3 col-12 d-flex justify-content-center">
+      <a href="">
       <div class="card">
-        <a href=""><img src="{{url_imagem}}" class="card-img-top" alt="Img"></a>
+        <img src='{{this.link_imagem}}' class="card-img-top" alt="Img">
         <div class="card-body">
-          <h5 class="card-title">{{titulo_receita}}</h5>
+          <h5 class="card-title">{{this.receita}}</h5>
         </div>
       </div>
+      </a>
     </div>
+  {{/each}}
 
 </div>

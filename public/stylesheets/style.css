@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Poppins&family=Norican&display=swap');
 
 :root{
+    --fundo_xadrez: url("/images/fundos/fundo_xadrez.svg");
+    --fundo_madeira: url("/images/fundos/madeira_fundo.jpg");
     --fundo: rgba(250, 235, 215, 0.507);
     --tom_vermelho_1: #4d1614;
     --tom_vermelho_2: #b4393d;
     --fonte_principal: "Poppins", Helvetica;
     --fonte_escrita: "Norican", Cursive;
 }
+a{
+    color: var(--tom_vermelho_1);
+    text-decoration: none;
+}
 body{
-    background-image: url("/images/fundos/fundo_xadrez.svg");
+    background-image: var(--fundo_xadrez);
     background-position:calc();
     background-repeat: repeat-y;
     background-size: cover;
@@ -28,7 +34,7 @@ body{
     position:absolute;
 }
 nav, .footer{
-    background-image: url("/images/fundos/madeira_fundo.jpg");
+    background-image: var(--fundo_madeira)
 }
 .nav-link{
     color:rgb(244, 235, 223) !important;
@@ -99,7 +105,11 @@ nav, .footer{
     font-size: 20px;
 }
 .card{
-    margin: 10px;
+    margin:10px;
+    height: 300px
+}
+.card-index{
+    height: 200px;
     width: 150px;
 }
 .card-title{
@@ -112,4 +122,9 @@ nav, .footer{
 }
 .explorar-pesquisa button{
     background-color: var(--tom_vermelho_2);
+}
+.usuario-secao *{
+    margin: auto;
+    color: antiquewhite;
+    text-align: center;
 }

@@ -5,11 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const bodyParser = require('body-parser');
 
-var indexRouter = require('./routes/rotasIndex.js');
+var rotasIndex = require('./routes/rotasIndex.js');
 var rotasReceitas = require('./routes/rotasReceitas.js');
 var rotasApi = require('./routes/rotasApi.js');
-var rotasUser = require('./routes/rotasUsuario.js');
-
 
 var app = express();
 
@@ -25,12 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(bodyParser.json());
 
-app.use('/', indexRouter);
+app.use('/', rotasIndex);
 app.use('/receitas', rotasReceitas);
 app.use('/receitas/api', rotasApi);
-app.use('/usuario', rotasUser);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
