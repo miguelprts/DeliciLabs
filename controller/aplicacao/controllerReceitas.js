@@ -1,5 +1,4 @@
 const modelMinhasReceitas = require('../../models/src/model_Crud_Receitas')
-const modelReceitasApi = require('../../models/src/model_ApiExterna')
 const model_ApiExterna = require('../../models/src/model_ApiExterna')
 
 exports.novaReceita = async function(req,res) {
