@@ -7,19 +7,6 @@ exports.index = async function(req, res) {
     }
     res.render('index/index', coisas)
 }
-
-exports.tela_explorar_post = async function(req, res) {
-    var receitasApi = await model_ApiExterna.pegarDadosFiltrados(req.body.titulo);
-    var minhasReceitas = await modelMinhasReceitas.pegarReceitasFiltro(req.body.titulo);
-    
-    coisas = {
-        title: "Explore Receitas!",
-        receitasApi: receitasApi,
-        minhasReceitas: minhasReceitas
-    }
-    res.render('index/explorar', coisas)
-}
-
 exports.tela_explorar = async function(req, res) {
     var receitasApi = await model_ApiExterna.pegarDados();
     var minhasReceitas = await modelMinhasReceitas.pegarReceitas();
