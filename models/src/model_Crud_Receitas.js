@@ -19,7 +19,7 @@ class ModelReceitas {
         var id = receita._id
         await collection.updateOne(
             { _id: new mongodb.ObjectId(id)},
-            { $set: {receita: receita.receita, categoria:receita.categoria, ingredientes:receita.ingredientes, modo_de_preparo:receita.modo_de_preparo} }
+            { $set: {receita: receita.receita, categoria:receita.categoria, url_imagem:receita.url_imagem, ingredientes:receita.ingredientes, modo_de_preparo:receita.modo_de_preparo} }
         )
     }
     async deletarReceita(id){
